@@ -1,0 +1,27 @@
+preprocessing:
+  categorical: "OrdinalEncoding"
+  numerical: None
+  binomial: False
+dataset:
+  categorical:
+    - "cp"
+    - "restecg"
+    - "slope"
+    - "ca"
+    - "thal"
+  binomial:
+    - "sex"
+    - "fbs"
+    - "exang"
+  numerical:
+    - "age"
+    - "trestbps"
+    - "chol"
+    - "thalach"
+    - "oldpeak"
+  drop_feature: []
+  target: "target"
+  test_rate: 0.1
+model: "RandomForestClassifier"
+dataset_path: "ml_project/data/external/heart.csv"
+model_output_path: "ml_project/models/"
