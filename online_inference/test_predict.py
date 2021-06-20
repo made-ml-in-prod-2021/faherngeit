@@ -20,3 +20,4 @@ def test_predict():
     )
     assert response.status_code == 200
     assert response.json()[0] == {"id": '0', "label": 1.0}, f"Responce was: {response.json()[0]}"
+
