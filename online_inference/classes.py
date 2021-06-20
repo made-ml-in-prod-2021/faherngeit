@@ -37,3 +37,4 @@ def read_attempt_params(path: str) -> AttemptParams:
     with open(path, "r") as input_stream:
         schema = AttemptParams_Schema()
         return schema.load(yaml.safe_load(input_stream))
+
