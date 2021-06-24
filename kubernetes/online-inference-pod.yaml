@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ml-in-prod
+  labels:
+    app: ml-in-prod
+spec:
+  containers:
+    - image: fahrengeit/online_inference:v1
+      name: ml-in-prod
+      ports:
+        - containerPort: 8000
