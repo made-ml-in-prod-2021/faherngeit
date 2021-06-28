@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ml-in-prod
+  labels:
+    app: ml-in-prod
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 3kub
+      maxUnavailable: 3
+  selector:
+    matchLabels:
+      app: ml-in-prod
+  template:
+    metadata:
+      name: ml-in-prod
+      labels:
+        app: ml-in-prod
+    spec:
+      containers:
+        - image: fahrengeit/online_inference:v1
+          name: ml-in-prod
+          ports:
+            - containerPort: 8000

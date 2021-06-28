@@ -11,5 +11,6 @@ WORKDIR .
 
 ENV PATH_TO_MODEL="/RandomForestClassifier.pkl"
 ENV PATH_TO_DESC="/another_train.yaml"
+ENV LOG_LEVEL = "DEBUG"
 
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]

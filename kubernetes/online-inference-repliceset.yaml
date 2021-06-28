@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: ml-in-prod
+  labels:
+    app: ml-in-prod
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      tier: ml-in-prod
+  template:
+    metadata:
+      labels:
+        tier: ml-in-prod
+    spec:
+      containers:
+        - name: ml-in-prod
+          image: fahrengeit/online_inference:v2
